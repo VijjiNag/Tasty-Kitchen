@@ -206,14 +206,16 @@ class RestaurantList extends Component {
           </ul>
           <div className="page-container">
             <button
-              data-testid="pagination-left-button"
+              testid="pagination-left-button"
               onClick={this.onDecrementPage}
               type="button"
               className="page-decrement"
             >
               <IoIosArrowDropleftCircle className="icon" />
             </button>
-            <p testid="active-page-number">{`${activePageNumber} of 4`}</p>
+            <p>
+              <span testid="active-page-number">{activePageNumber}</span> of 4
+            </p>
             <button
               testid="pagination-right-button"
               onClick={this.onIncrementPage}
