@@ -1,0 +1,69 @@
+.res-list {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.res-img {
+  width: 150px;
+  height: 120px;
+  border-radius: 8px;
+}
+.res-details {
+  display: flex;
+  flex-direction: column;
+}
+.res-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.hotel-name {
+  font-family: DM Sans;
+  font-weight: 700;
+  color: #334155;
+  font-size: 18px;
+}
+.food-type {
+  font-family: DM Sans;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 2px;
+}
+.ratings-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.star {
+  color: #ffcc00;
+  margin-top: 3px;
+}
+.rating {
+  font-family: DM Sans;
+  font-weight: 500;
+  color: #0f172a;
+  margin-top: 0px;
+}
+.total-reviews {
+  font-family: DM Sans;
+  color: #64748b;
+}
+@media screen and (max-width: 768px) {
+  .hotel-name {
+    font-size: 16px;
+  }
+  .food-type {
+    font-size: 12px;
+  }
+  .rating {
+    font-size: 14px;
+  }
+  .total-reviews {
+    font-size: 12px;
+  }
+  .star {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,95 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.food-item-img {
+  width: 300px;
+  height: 250px;
+  border-radius: 8px;
+}
+.food-details-container {
+  display: flex;
+  flex-direction: column;
+}
+.food-head {
+  font-family: DM Sans;
+  font-weight: 700;
+  color: #334155;
+  font-size: 18px;
+}
+.cost-container {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.rupee-icon {
+  font-size: 20px;
+  color: #334155;
+}
+.cost {
+  font-family: DM Sans;
+  font-weight: 500;
+  font-size: 16px;
+  color: #334155;
+  margin-top: 0px;
+}
+.qty-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.qty-btn {
+  background-color: transparent;
+  border-width: 0px;
+  cursor: pointer;
+  margin-top: 3px;
+}
+.qty {
+  font-family: DM Sans;
+  font-weight: 500;
+  color: #334155;
+}
+.add-btn {
+  background-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 8px;
+  border-color: #ffa412;
+  color: #ffa412;
+  font-family: DM Sans;
+  font-weight: 500;
+  height: 32px;
+  cursor: pointer;
+  width: 100px;
+}
+@media screen and (max-width: 495px) {
+  .food-item-img {
+    width: 200px;
+    height: 180px;
+  }
+  .food-head {
+    font-size: 16px;
+  }
+  .rupee-icon {
+    font-size: 18px;
+  }
+  .cost {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .food-item-img {
+    width: 200px;
+    height: 180px;
+  }
+  .food-head {
+    font-size: 16px;
+  }
+  .rupee-icon {
+    font-size: 18px;
+  }
+  .cost {
+    font-size: 14px;
+  }
+}

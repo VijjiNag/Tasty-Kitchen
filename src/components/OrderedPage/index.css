@@ -1,0 +1,38 @@
+.order-page-container {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 170px;
+  padding-bottom: 170px;
+}
+.success {
+  color: #2dca73;
+  font-size: 60px;
+}
+.success-head {
+  font-family: DM Sans;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+}
+.success-desc {
+  font-family: DM Sans;
+  font-size: 16px;
+  color: #64748b;
+  font-weight: 500;
+  margin-top: 0px;
+}
+.go-to-home-page-btn {
+  background-color: #f7931e;
+  height: 30px;
+  width: 150px;
+  font-family: DM Sans;
+  font-weight: 500;
+  color: #ffffff;
+  border-width: 0px;
+  border-radius: 8px;
+  cursor: pointer;
+}
