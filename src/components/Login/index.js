@@ -61,7 +61,7 @@ class Login extends Component {
         <img
           className="mobile-view-banner"
           src="https://res.cloudinary.com/dhfmjj1j9/image/upload/v1681207620/Rectangle_1457_vqyzwy.png"
-          alt=""
+          alt="website login"
         />
         <div className="login-card-container">
           <div className="login-card">
@@ -69,7 +69,7 @@ class Login extends Component {
               <img
                 className="logo"
                 src="https://res.cloudinary.com/dhfmjj1j9/image/upload/v1681293595/Vector_klhk0p.png"
-                alt="website login"
+                alt="website logo"
               />
               <h1 className="website-head">Tasty Kitchens</h1>
               <h1 className="login-head">Login</h1>
@@ -107,7 +107,7 @@ class Login extends Component {
         <img
           className="login-banner-img"
           src="https://res.cloudinary.com/dhfmjj1j9/image/upload/v1681207588/367d1981f2a409a617ac848670d29c7e_s14uml.jpg"
-          alt=""
+          alt="website login"
         />
       </div>
     )

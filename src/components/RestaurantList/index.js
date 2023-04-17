@@ -167,7 +167,7 @@ class RestaurantList extends Component {
   renderLoadingView = () => (
     <div
       className="offer-details-loader-container"
-      testid="restaurants-list-loader"
+      data-testid="restaurants-list-loader"
     >
       <Loader type="ThreeDots" color="#F7931E" height="50" width="50" />
     </div>
@@ -196,7 +196,7 @@ class RestaurantList extends Component {
     return (
       <>
         <div className="render-filters">
-          <ul testid="restaurant-item" className="res-list-container">
+          <ul data-testid="restaurant-item" className="res-list-container">
             {restaurantsList.map(eachList => (
               <RestaurantsListItem
                 restaurantsListDetails={eachList}
@@ -206,7 +206,7 @@ class RestaurantList extends Component {
           </ul>
           <div className="page-container">
             <button
-              testid="pagination-left-button"
+              data-testid="pagination-left-button"
               onClick={this.onDecrementPage}
               type="button"
               className="page-decrement"
@@ -214,10 +214,11 @@ class RestaurantList extends Component {
               <IoIosArrowDropleftCircle className="icon" />
             </button>
             <p>
-              <span testid="active-page-number">{activePageNumber}</span> of 4
+              <span data-testid="active-page-number">{activePageNumber}</span>{' '}
+              of 4
             </p>
             <button
-              testid="pagination-right-button"
+              data-testid="pagination-right-button"
               onClick={this.onIncrementPage}
               type="button"
               className="page-decrement"

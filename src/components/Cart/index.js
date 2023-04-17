@@ -1,32 +1,35 @@
-import CartContext from '../../context/CartContext'
+import {Component} from 'react'
 import Header from '../Header'
 import CartListView from '../CartListView'
 import CartEmptyView from '../CartEmptyView'
 import Footer from '../Footer'
 import './index.css'
 
-const Cart = () => (
-  <CartContext.Consumer>
-    {value => {
-      const {cartList} = value
-      const showEmptyView = cartList.length === 0
+class Cart extends Component {
+  state = {
+    cartList: JSON.parse(localStorage.getItem('cartData')),
+  }
 
-      return (
+  render() {
+    const {cartList} = this.state
+    const showEmptyView = cartList.length === 0
+    localStorage.setItem('cartData', JSON.stringify(cartList))
+
+    return (
+      <>
+        <Header />
         <>
-          <Header />
-          <>
-            {showEmptyView ? (
-              <CartEmptyView />
-            ) : (
-              <>
-                <CartListView />
-              </>
-            )}
-          </>
-          <Footer />
+          {showEmptyView ? (
+            <CartEmptyView />
+          ) : (
+            <>
+              <CartListView />
+            </>
+          )}
         </>
-      )
-    }}
-  </CartContext.Consumer>
-)
+        <Footer />
+      </>
+    )
+  }
+}
 export default Cart
