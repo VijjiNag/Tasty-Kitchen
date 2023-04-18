@@ -13,7 +13,6 @@ class Cart extends Component {
   render() {
     const {cartList} = this.state
     const showEmptyView = cartList.length === 0
-    localStorage.setItem('cartData', JSON.stringify(cartList))
 
     return (
       <>

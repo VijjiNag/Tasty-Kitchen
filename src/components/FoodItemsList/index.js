@@ -28,17 +28,19 @@ class FoodItemsList extends Component {
     }))
   }
 
+  onClickAddItem = () => {
+    const {cartList, quantity} = this.state
+    const {foodItemDetails} = this.props
+    cartListData.push({...foodItemDetails, quantity})
+    this.setState({cartList: cartListData})
+    localStorage.setItem('cartData', JSON.stringify(cartList))
+    swal('Hurray!', 'You have added to cart successfully!', 'success')
+  }
+
   renderFoodItemDetailsView = () => {
     const {quantity} = this.state
     const {foodItemDetails} = this.props
     const {imageUrl, name, cost, rating} = foodItemDetails
-    const onClickAddItem = () => {
-      const {cartList} = this.state
-      cartListData.push({...foodItemDetails, quantity})
-      this.setState({cartList: cartListData})
-      localStorage.setItem('cartData', JSON.stringify(cartList))
-      swal('Hurray!', 'You have added to cart successfully!', 'success')
-    }
     return (
       <li className="item">
         <img className="food-item-img" src={imageUrl} alt="" />
@@ -69,7 +71,11 @@ class FoodItemsList extends Component {
               <BsPlusSquare />
             </button>
           </div>
-          <button onClick={onClickAddItem} type="button" className="add-btn">
+          <button
+            onClick={this.onClickAddItem}
+            type="button"
+            className="add-btn"
+          >
             Add
           </button>
         </div>
