@@ -8,6 +8,10 @@
   padding-top: 10px;
   justify-content: space-between;
 }
+.burger {
+  display: flex;
+  flex-direction: column;
+}
 .cart-count-badge {
   background-color: #f7931e;
   color: #ffffff;
@@ -46,6 +50,20 @@
   flex-direction: row;
   gap: 30px;
 }
+.logout-btn-mobile {
+  background-color: #f7931e;
+  border-width: 0px;
+  width: 100px;
+  height: 32px;
+  border-radius: 8px;
+  font-family: DM Sans;
+  font-weight: 500;
+  margin-top: 0px;
+  cursor: pointer;
+  color: #ffffff;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
 .nav-links-list-container {
   display: flex;
   flex-direction: row;
@@ -70,18 +88,42 @@
   border-radius: 8px;
   font-family: DM Sans;
   font-weight: 500;
-  margin-top: 10px;
+  margin-top: 0px;
   cursor: pointer;
   color: #ffffff;
+  margin-top: 10px;
 }
+
 .hamburger-icon-btn {
   background-color: transparent;
   border-width: 0;
+  width: 40px;
+  margin-top: 5px;
+  height: 30px;
+  cursor: pointer;
 }
 .hamburger-icon {
   color: #f7931e;
   font-size: 25px;
   cursor: pointer;
+}
+.nav-links-container-mobile {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding-left: 0px;
+  gap: 20px;
+}
+.nav-link-mobile {
+  font-family: DM Sans;
+  color: #334155;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-link-mobile:hover {
+  color: #f7931e;
 }
 @media screen and (max-width: 768px) {
   .logout-btn {
@@ -103,4 +145,39 @@
   .hamburger-icon-btn {
     display: none;
   }
+}
+.modal {
+  font-size: 12px;
+}
+.modal > .header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+.modal > .content {
+  width: 100%;
+}
+.content {
+  text-align: center;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
 }

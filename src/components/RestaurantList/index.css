@@ -3,6 +3,10 @@
   flex-direction: column;
   margin-top: 25px;
 }
+.pagination {
+  color: #ffa412;
+  font-weight: 500;
+}
 .popular-head {
   font-family: DM Sans;
   font-size: 32px;
@@ -96,6 +100,7 @@
 }
 .icon {
   font-size: 25px;
+  color: #ffa412;
 }
 .res-list-container {
   display: grid;

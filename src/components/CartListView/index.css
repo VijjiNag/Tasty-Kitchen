@@ -59,3 +59,19 @@
   color: #3e4c59;
   margin-top: 4px;
 }
+@media screen and (max-width: 424px) {
+  .order {
+    font-size: 20px;
+  }
+  .rupee-icon-summary {
+    font-size: 16px;
+  }
+  .total-cost {
+    font-size: 20px;
+  }
+  .placer-order-btn {
+    height: 25px;
+    width: 80px;
+    font-size: 12px;
+  }
+}

@@ -3,14 +3,12 @@ import {BiRupee} from 'react-icons/bi'
 import {AiFillStar} from 'react-icons/ai'
 import {BsPlusSquare, BsDashSquare} from 'react-icons/bs'
 import swal from 'sweetalert'
+import CartContext from '../../context/CartContext'
 import './index.css'
-
-const cartListData = []
 
 class FoodItemsList extends Component {
   state = {
     quantity: 1,
-    cartList: cartListData,
   }
 
   onClickDecrementQuantity = () => {
@@ -28,62 +26,64 @@ class FoodItemsList extends Component {
     }))
   }
 
-  onClickAddItem = () => {
-    const {cartList, quantity} = this.state
-    const {foodItemDetails} = this.props
-    cartListData.push({...foodItemDetails, quantity})
-    this.setState({cartList: cartListData})
-    localStorage.setItem('cartData', JSON.stringify(cartList))
-    swal('Hurray!', 'You have added to cart successfully!', 'success')
-  }
-
-  renderFoodItemDetailsView = () => {
-    const {quantity} = this.state
-    const {foodItemDetails} = this.props
-    const {imageUrl, name, cost, rating} = foodItemDetails
-    return (
-      <li className="item">
-        <img className="food-item-img" src={imageUrl} alt="" />
-        <div className="food-details-container">
-          <h1 className="food-head">{name}</h1>
-          <div className="cost-container">
-            <BiRupee className="rupee-icon" />
-            <p className="cost">{cost}</p>
-          </div>
-          <div className="ratings-container">
-            <AiFillStar className="star" />
-            <p className="rating">{rating}</p>
-          </div>
-          <div className="qty-container">
-            <button
-              onClick={this.onClickDecrementQuantity}
-              type="button"
-              className="qty-btn"
-            >
-              <BsDashSquare />
-            </button>
-            <p className="qty">{quantity}</p>
-            <button
-              onClick={this.onClickIncrementQuantity}
-              type="button"
-              className="qty-btn"
-            >
-              <BsPlusSquare />
-            </button>
-          </div>
-          <button
-            onClick={this.onClickAddItem}
-            type="button"
-            className="add-btn"
-          >
-            Add
-          </button>
-        </div>
-      </li>
-    )
-  }
+  renderFoodItemDetailsView = () => (
+    <CartContext.Consumer>
+      {value => {
+        const {quantity} = this.state
+        const {foodItemDetails} = this.props
+        const {imageUrl, name, cost, rating} = foodItemDetails
+        const {addCartItem} = value
+        const onClickAddItem = () => {
+          addCartItem({...foodItemDetails, quantity})
+          swal('Hurray!', 'You have added to cart successfully!', 'success')
+        }
+        return (
+          <li className="item">
+            <img className="food-item-img" src={imageUrl} alt="" />
+            <div className="food-details-container">
+              <h1 className="food-head">{name}</h1>
+              <div className="cost-container">
+                <BiRupee className="rupee-icon" />
+                <p className="cost">{cost}</p>
+              </div>
+              <div className="ratings-container-element">
+                <AiFillStar className="star-icon" />
+                <p className="rating-text">{rating}</p>
+              </div>
+              <div className="qty-container">
+                <button
+                  onClick={this.onClickDecrementQuantity}
+                  type="button"
+                  className="qty-btn"
+                >
+                  <BsDashSquare />
+                </button>
+                <p className="qty">{quantity}</p>
+                <button
+                  onClick={this.onClickIncrementQuantity}
+                  type="button"
+                  className="qty-btn"
+                >
+                  <BsPlusSquare />
+                </button>
+              </div>
+              <button
+                onClick={onClickAddItem}
+                type="button"
+                className="add-btn"
+              >
+                Add
+              </button>
+            </div>
+          </li>
+        )
+      }}
+    </CartContext.Consumer>
+  )
 
   render() {
+    const {length} = this.state
+    localStorage.setItem('length', JSON.stringify(length))
     return <div>{this.renderFoodItemDetailsView()}</div>
   }
 }

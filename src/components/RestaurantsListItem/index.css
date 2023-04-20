@@ -67,3 +67,8 @@
     font-size: 13px;
   }
 }
+@media screen and (max-width: 326px) {
+  .hotel-name {
+    font-size: 12px;
+  }
+}

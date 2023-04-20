@@ -1,5 +1,7 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
+import {AiFillStar} from 'react-icons/ai'
+import {BiRupee} from 'react-icons/bi'
 import Loader from 'react-loader-spinner'
 import Header from '../Header'
 import FoodItemsList from '../FoodItemsList'
@@ -96,10 +98,42 @@ class RestaurantItemDetails extends Component {
 
   renderRestaurantItemDetails = () => {
     const {restaurantItemDetails, foodItems} = this.state
-    const {imageUrl} = restaurantItemDetails
+    const {
+      imageUrl,
+      name,
+      cuisine,
+      location,
+      rating,
+      reviewsCount,
+      costForTwo,
+    } = restaurantItemDetails
     return (
       <div className="food-item-container">
-        <img className="item-banner-img" src={imageUrl} alt="" />
+        <div className="restaurant-details-banner-container">
+          <img className="item-banner-img" src={imageUrl} alt="" />
+          <div className="res-details-banner">
+            <h1 className="res-name-banner">{name}</h1>
+            <p className="res-food-desc-banner">{cuisine}</p>
+            <p className="res-location-banner">{location}</p>
+            <div className="res-rating-banner-container">
+              <div className="res-rating-container-main-banner">
+                <div className="res-rating-details-banner">
+                  <AiFillStar className="star-res-banner" />
+                  <p className="rating-res-banner">{rating}</p>
+                </div>
+                <p className="reviews-count-banner">{reviewsCount}+ Ratings</p>
+              </div>
+              <hr className="line-res-banner" />
+              <div className="price-container-main-banner">
+                <div className="price-container-banner">
+                  <BiRupee className="rupee-icon-banner" />
+                  <p className="const-for-two-banner">{costForTwo}</p>
+                </div>
+                <p className="cost-for-tow-desc">Cost for two</p>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="food-items-container">
           <ul className="food-items-list-container">
             {foodItems.map(eachItem => (

@@ -213,7 +213,7 @@ class RestaurantList extends Component {
             >
               <IoIosArrowDropleftCircle className="icon" />
             </button>
-            <p>
+            <p className="pagination">
               <span data-testid="active-page-number">{activePageNumber}</span>{' '}
               of 4
             </p>

@@ -1,10 +1,101 @@
 .item-banner-img {
-  height: 70vh;
-  width: 100%;
-  align-self: center;
+  width: 450px;
+  height: 300px;
+  border-radius: 8px;
 }
 .food-items-container {
   background-color: #ffffff;
+  width: 100%;
+  background-size: cover;
+  overflow: auto;
+}
+.res-name-banner {
+  font-family: roboto;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 36px;
+}
+.res-food-desc-banner {
+  font-family: roboto;
+  font-size: 16px;
+  color: #ffffff;
+  margin-top: 0px;
+}
+.res-rating-banner-container {
+  display: flex;
+  flex-direction: row;
+}
+.star-res-banner {
+  color: #ffffff;
+}
+.rating-res-banner {
+  font-family: DM Sans;
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 500;
+  margin-top: 0px;
+}
+.reviews-count-banner {
+  font-family: DM Sans;
+  font-size: 12px;
+  color: #e2e8f0;
+  font-weight: 500;
+  margin-top: 0px;
+}
+.price-container-main-banner {
+  display: flex;
+  flex-direction: column;
+}
+.rupee-icon-banner {
+  color: #ffffff;
+}
+.price-container-banner {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+}
+.line-res-banner {
+  width: 1px;
+  height: 40px;
+  background-color: #e2e8f0;
+  margin-left: 25px;
+  margin-top: 0px;
+  margin-right: 25px;
+}
+.cost-for-tow-desc {
+  font-family: DM Sans;
+  font-weight: 500;
+  font-size: 12px;
+  color: #e2e8f0;
+  margin-top: 0px;
+}
+.const-for-two-banner {
+  font-family: DM Sans;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+  margin-top: 0px;
+}
+.res-rating-container-main-banner {
+  display: flex;
+  flex-direction: column;
+}
+.res-rating-details-banner {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+}
+.res-location-banner {
+  font-family: roboto;
+  font-size: 16px;
+  color: #ffffff;
+  margin-top: 0px;
+}
+.res-details-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
 }
 .restaurant-details-error-view-container-2 {
   padding-top: 150px;
@@ -28,7 +119,135 @@
   flex-direction: column;
   background-color: #ffffff;
 }
-@media screen and (max-width: 693px) {
+.restaurant-details-banner-container {
+  display: flex;
+  flex-direction: row;
+  background-image: url('https://res.cloudinary.com/dhfmjj1j9/image/upload/v1681873647/Frame_279_itu3lw.png');
+  background-size: cover;
+  height: 50vh;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  justify-content: center;
+  gap: 30px;
+  padding-right: 50px;
+  width: 100%;
+}
+
+@media screen and (min-width: 1130px) {
+  .item-banner-img {
+    width: 400px;
+    height: 220px;
+  }
+}
+@media screen and (max-width: 1130px) {
+  .item-banner-img {
+    width: 37%;
+    height: 37vh;
+  }
+  .res-name-banner {
+    font-size: 27px;
+  }
+  .res-food-desc-banner {
+    font-size: 12px;
+  }
+  .res-location-banner {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .item-banner-img {
+    width: 32%;
+    height: 32vh;
+  }
+  .restaurant-details-banner-container {
+    height: 45vh;
+  }
+  .res-name-banner {
+    font-size: 23px;
+  }
+  .res-food-desc-banner {
+    font-size: 10px;
+  }
+  .res-location-banner {
+    font-size: 10px;
+  }
+  .star-res-banner {
+    font-size: 15px;
+  }
+  .rating-res-banner {
+    font-size: 13px;
+  }
+  .rupee-icon-banner {
+    font-size: 15px;
+  }
+  .const-for-two-banner {
+    font-size: 13px;
+  }
+  .reviews-count-banner {
+    font-size: 11px;
+  }
+  .cost-for-tow-desc {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 625px) {
+  .item-banner-img {
+    width: 35%;
+    height: 27vh;
+  }
+  .restaurant-details-banner-container {
+    height: 40vh;
+  }
+  .res-name-banner {
+    font-size: 20px;
+  }
+  .res-food-desc-banner {
+    font-size: 9px;
+  }
+  .res-location-banner {
+    font-size: 9px;
+  }
+  .star-res-banner {
+    font-size: 13px;
+  }
+  .rating-res-banner {
+    font-size: 11px;
+  }
+  .rupee-icon-banner {
+    font-size: 13px;
+  }
+  .const-for-two-banner {
+    font-size: 11px;
+  }
+  .reviews-count-banner {
+    font-size: 10px;
+  }
+  .cost-for-tow-desc {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 353px) {
+  .item-banner-img {
+    width: 35%;
+    height: 25vh;
+    margin-left: 10px;
+  }
+  .restaurant-details-banner-container {
+    height: 37vh;
+  }
+  .res-name-banner {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 387px) {
+  .reviews-count-banner {
+    font-size: 8px;
+  }
+  .cost-for-tow-desc {
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 583px) {
   .food-items-list-container {
     display: flex;
     flex-direction: column;

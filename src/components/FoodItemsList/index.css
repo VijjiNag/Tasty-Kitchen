@@ -43,7 +43,6 @@
   background-color: transparent;
   border-width: 0px;
   cursor: pointer;
-  margin-top: 3px;
 }
 .qty {
   font-family: DM Sans;
@@ -92,4 +91,43 @@
   .cost {
     font-size: 14px;
   }
+}
+@media screen and (max-width: 758px) {
+  .food-item-img {
+    width: 150px;
+    height: 170px;
+  }
+  .food-head {
+    font-size: 11px;
+  }
+  .rupee-icon {
+    font-size: 14px;
+  }
+  .cost {
+    font-size: 11px;
+  }
+  .star-icon {
+    font-size: 12px;
+  }
+  .rating-text {
+    font-size: 9px;
+  }
+  .add-btn {
+    height: 27px;
+    width: 90px;
+  }
+}
+.star-icon {
+  color: #ffa412;
+}
+.ratings-container-element {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.rating-text {
+  font-family: DM Sans;
+  color: #0a1f44;
+  font-size: 14px;
+  margin-top: 0px;
 }

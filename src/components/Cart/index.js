@@ -3,31 +3,33 @@ import Header from '../Header'
 import CartListView from '../CartListView'
 import CartEmptyView from '../CartEmptyView'
 import Footer from '../Footer'
+import CartContext from '../../context/CartContext'
 import './index.css'
 
 class Cart extends Component {
-  state = {
-    cartList: JSON.parse(localStorage.getItem('cartData')),
-  }
-
   render() {
-    const {cartList} = this.state
-    const showEmptyView = cartList.length === 0
-
     return (
-      <>
-        <Header />
-        <>
-          {showEmptyView ? (
-            <CartEmptyView />
-          ) : (
+      <CartContext.Consumer>
+        {value => {
+          const {cartList} = value
+          const showEmptyView = cartList.length === 0
+          return (
             <>
-              <CartListView />
+              <Header />
+              <>
+                {showEmptyView ? (
+                  <CartEmptyView />
+                ) : (
+                  <>
+                    <CartListView />
+                  </>
+                )}
+              </>
+              <Footer />
             </>
-          )}
-        </>
-        <Footer />
-      </>
+          )
+        }}
+      </CartContext.Consumer>
     )
   }
 }

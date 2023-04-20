@@ -72,7 +72,11 @@ class Home extends Component {
             {offersList.map(eachOffer => (
               <ul className="slick-slide" key={eachOffer.id}>
                 <li>
-                  <img src={eachOffer.imageUrl} alt="offer" />
+                  <img
+                    className="image-offer"
+                    src={eachOffer.imageUrl}
+                    alt="offer"
+                  />
                 </li>
               </ul>
             ))}
