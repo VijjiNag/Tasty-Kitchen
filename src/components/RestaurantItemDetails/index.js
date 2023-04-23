@@ -110,7 +110,7 @@ class RestaurantItemDetails extends Component {
     return (
       <div className="food-item-container">
         <div className="restaurant-details-banner-container">
-          <img className="item-banner-img" src={imageUrl} alt="" />
+          <img className="item-banner-img" src={imageUrl} alt="restaurant" />
           <div className="res-details-banner">
             <h1 className="res-name-banner">{name}</h1>
             <p className="res-food-desc-banner">{cuisine}</p>
@@ -135,7 +135,7 @@ class RestaurantItemDetails extends Component {
           </div>
         </div>
         <div className="food-items-container">
-          <ul className="food-items-list-container">
+          <ul className="food-items-list-container" testid="foodItem">
             {foodItems.map(eachItem => (
               <FoodItemsList foodItemDetails={eachItem} key={eachItem.id} />
             ))}

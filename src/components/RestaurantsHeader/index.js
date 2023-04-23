@@ -12,6 +12,7 @@ const RestaurantsHeader = props => {
   return (
     <div className="filter-price-container">
       <BsFilterLeft className="filter-icon" />
+      <p className="sort-by">Sort By</p>
       <select
         className="sort-by-select"
         value={activeOptionId}

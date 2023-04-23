@@ -49,7 +49,7 @@ class Home extends Component {
 
   renderLoadingView = () => (
     <div
-      data-testid="restaurants-offers-loader"
+      testid="restaurants-offers-loader"
       className="offer-details-loader-container"
     >
       <Loader type="ThreeDots" color="#F7931E" height="50" width="50" />
@@ -70,8 +70,8 @@ class Home extends Component {
         <div className="home-container">
           <Slider {...settings}>
             {offersList.map(eachOffer => (
-              <ul className="slick-slide" key={eachOffer.id}>
-                <li>
+              <ul className="slick-slide">
+                <li key={eachOffer.id}>
                   <img
                     className="image-offer"
                     src={eachOffer.imageUrl}

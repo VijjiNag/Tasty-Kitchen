@@ -1,12 +1,9 @@
 .nav-container {
   background-color: #f8fafc;
   height: 10vh;
-  display: flex;
-  flex-direction: row;
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 10px;
-  justify-content: space-between;
 }
 .burger {
   display: flex;
@@ -67,7 +64,9 @@
 .nav-links-list-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   list-style-type: none;
+  margin-top: 0px;
   gap: 30px;
 }
 .nav-link {
@@ -91,7 +90,7 @@
   margin-top: 0px;
   cursor: pointer;
   color: #ffffff;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 .hamburger-icon-btn {

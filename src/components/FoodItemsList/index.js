@@ -8,12 +8,12 @@ import './index.css'
 
 class FoodItemsList extends Component {
   state = {
-    quantity: 1,
+    quantity: 0,
   }
 
   onClickDecrementQuantity = () => {
     const {quantity} = this.state
-    if (quantity > 1) {
+    if (quantity > 0) {
       this.setState(prevState => ({
         quantity: prevState.quantity - 1,
       }))
@@ -33,7 +33,9 @@ class FoodItemsList extends Component {
         const {foodItemDetails} = this.props
         const {imageUrl, name, cost, rating} = foodItemDetails
         const {addCartItem} = value
+        const isQuantityGreaterThanZero = quantity > 0
         const onClickAddItem = () => {
+          this.setState({quantity: 1})
           addCartItem({...foodItemDetails, quantity})
           swal('Hurray!', 'You have added to cart successfully!', 'success')
         }
@@ -50,23 +52,30 @@ class FoodItemsList extends Component {
                 <AiFillStar className="star-icon" />
                 <p className="rating-text">{rating}</p>
               </div>
-              <div className="qty-container">
-                <button
-                  onClick={this.onClickDecrementQuantity}
-                  type="button"
-                  className="qty-btn"
-                >
-                  <BsDashSquare />
-                </button>
-                <p className="qty">{quantity}</p>
-                <button
-                  onClick={this.onClickIncrementQuantity}
-                  type="button"
-                  className="qty-btn"
-                >
-                  <BsPlusSquare />
-                </button>
-              </div>
+              {isQuantityGreaterThanZero && (
+                <div className="qty-container">
+                  <button
+                    testid="decrement-count"
+                    onClick={this.onClickDecrementQuantity}
+                    type="button"
+                    className="qty-btn"
+                  >
+                    <BsDashSquare />
+                  </button>
+                  <p className="qty" testid="active-count">
+                    {quantity}
+                  </p>
+                  <button
+                    testid="increment-count"
+                    onClick={this.onClickIncrementQuantity}
+                    type="button"
+                    className="qty-btn"
+                  >
+                    <BsPlusSquare />
+                  </button>
+                </div>
+              )}
+
               <button
                 onClick={onClickAddItem}
                 type="button"
@@ -82,8 +91,6 @@ class FoodItemsList extends Component {
   )
 
   render() {
-    const {length} = this.state
-    localStorage.setItem('length', JSON.stringify(length))
     return <div>{this.renderFoodItemDetailsView()}</div>
   }
 }

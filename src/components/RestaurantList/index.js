@@ -11,14 +11,14 @@ import './index.css'
 
 const sortByOptions = [
   {
-    id: 0,
-    displayText: 'Highest',
-    value: 'Highest',
-  },
-  {
     id: 1,
     displayText: 'Lowest',
     value: 'Lowest',
+  },
+  {
+    id: 0,
+    displayText: 'Highest',
+    value: 'Highest',
   },
 ]
 
@@ -114,7 +114,7 @@ class RestaurantList extends Component {
           <div className="res-head">
             <h1 className="popular-head">Popular Restaurants</h1>
             <p className="desc">
-              Select your favorite restaurant special dish and make your day
+              Select Your favourite restaurant special dish and make your day
               happy...
             </p>
           </div>
@@ -196,7 +196,7 @@ class RestaurantList extends Component {
     return (
       <>
         <div className="render-filters">
-          <ul data-testid="restaurant-item" className="res-list-container">
+          <ul testid="restaurant-item" className="res-list-container">
             {restaurantsList.map(eachList => (
               <RestaurantsListItem
                 restaurantsListDetails={eachList}
@@ -206,7 +206,7 @@ class RestaurantList extends Component {
           </ul>
           <div className="page-container">
             <button
-              data-testid="pagination-left-button"
+              testid="pagination-left-button"
               onClick={this.onDecrementPage}
               type="button"
               className="page-decrement"
@@ -214,11 +214,10 @@ class RestaurantList extends Component {
               <IoIosArrowDropleftCircle className="icon" />
             </button>
             <p className="pagination">
-              <span data-testid="active-page-number">{activePageNumber}</span>{' '}
-              of 4
+              <span testid="active-page-number">{activePageNumber}</span> of 4
             </p>
             <button
-              data-testid="pagination-right-button"
+              testid="pagination-right-button"
               onClick={this.onIncrementPage}
               type="button"
               className="page-decrement"

@@ -31,18 +31,20 @@ class CartListView extends Component {
                 <OrderedPage />
               ) : (
                 <>
-                  <ul className="cart-list">
+                  <ul className="cart-list" testid="cartItem">
                     {cartList.map(eachList => (
                       <CartItem cartItemDetails={eachList} key={eachList.id} />
                     ))}
                   </ul>
                   <hr className="divide-line" />
                   <div className="cart-summary-container">
-                    <p className="order">Order Total:</p>
+                    <h1 className="order">Order Total:</h1>
                     <div className="order-container">
                       <div className="price-container">
                         <BiRupee className="rupee-icon-summary" />
-                        <p className="total-cost">{total}</p>
+                        <p className="total-cost" testid="total-price">
+                          {total}
+                        </p>
                       </div>
                       <button
                         onClick={this.onClickPlaceOrderItems}

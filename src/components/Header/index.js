@@ -94,18 +94,18 @@ class Header extends Component {
     }
     return (
       <nav className="nav-container">
-        <Link className="logo-link" to="/">
-          <div className="nav-logo-container">
-            <img
-              className="web-logo"
-              src="https://res.cloudinary.com/dhfmjj1j9/image/upload/v1681293595/Vector_klhk0p.png"
-              alt="website logo"
-            />
-            <h1 className="nav-head">Tasty Kitchen</h1>
-          </div>
-        </Link>
-        <div className="nav-links-container">
-          <ul className="nav-links-list-container">
+        <ul className="nav-links-list-container">
+          <Link className="logo-link" to="/">
+            <div className="nav-logo-container">
+              <img
+                className="web-logo"
+                src="https://res.cloudinary.com/dhfmjj1j9/image/upload/v1681293595/Vector_klhk0p.png"
+                alt="website logo"
+              />
+              <h1 className="nav-head">Tasty Kitchen</h1>
+            </div>
+          </Link>
+          <div className="nav-links-container">
             <li onClick={this.onClickHome}>
               <Link className="nav-link" to="/">
                 Home
@@ -117,12 +117,16 @@ class Header extends Component {
                 {this.renderCartItemsCount()}
               </Link>
             </li>
-          </ul>
-          <button onClick={onClickLogout} type="button" className="logout-btn">
-            Logout
-          </button>
-          {this.Modal()}
-        </div>
+            <button
+              onClick={onClickLogout}
+              type="button"
+              className="logout-btn"
+            >
+              Logout
+            </button>
+            {this.Modal()}
+          </div>
+        </ul>
       </nav>
     )
   }

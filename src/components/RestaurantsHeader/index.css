@@ -7,6 +7,10 @@
   color: #475569;
   font-size: 25px;
 }
+.sort-by {
+  color: #475569;
+  margin-top: 0px;
+}
 .sort-by-select {
   width: 150px;
   border-width: 0px;
@@ -16,4 +20,5 @@
   border-color: #475569;
   border-radius: 3px;
   font-size: 16px;
+  margin-bottom: 12px;
 }

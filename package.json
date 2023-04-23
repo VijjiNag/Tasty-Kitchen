@@ -26,8 +26,10 @@
     "react-router-dom": "5.2.0",
     "react-slick": "0.28.1",
     "reactjs-popup": "2.0.5",
+    "save": "2.9.0",
     "slick-carousel": "1.8.1",
-    "sweetalert": "2.1.2"
+    "sweetalert": "2.1.2",
+    "tasty-kitchens": "link:"
   },
   "devDependencies": {
     "eslint-config-airbnb": "18.2.1",
