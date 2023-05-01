@@ -44,45 +44,57 @@ class Header extends Component {
   }
 
   Modal = () => (
-    <Popup
-      trigger={
-        <button className="hamburger-icon-btn" type="button">
-          <GoThreeBars className="hamburger-icon" />
-        </button>
-      }
-      modal
-      nested
-    >
-      {close => (
-        <div className="modal">
-          <button type="button" className="close" onClick={close}>
-            &times;
-          </button>
-          <div className="content">
-            <ul className="nav-links-container-mobile">
-              <li>
-                <Link className="nav-link-mobile" to="/">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link className="nav-link" to="/cart">
-                  Cart
-                  {this.renderCartItemsCount()}
-                </Link>
-              </li>
-            </ul>
-            <button
-              onClick={this.onClickLogout}
-              type="button"
-              className="logout-btn-mobile"
-            >
-              Logout
-            </button>
-          </div>
+    <div className="nav-container-mobile">
+      <Link className="logo-link" to="/">
+        <div className="nav-logo-container">
+          <img
+            className="web-logo"
+            src="https://res.cloudinary.com/dhfmjj1j9/image/upload/v1681293595/Vector_klhk0p.png"
+            alt="website logo"
+          />
+          <h1 className="nav-head">Tasty Kitchen</h1>
         </div>
-      )}
-    </Popup>
+      </Link>
+      <Popup
+        trigger={
+          <button className="hamburger-icon-btn" type="button">
+            <GoThreeBars className="hamburger-icon" />
+          </button>
+        }
+        modal
+        nested
+      >
+        {close => (
+          <div className="modal">
+            <button type="button" className="close" onClick={close}>
+              &times;
+            </button>
+            <div className="content">
+              <ul className="nav-links-container-mobile">
+                <li>
+                  <Link className="nav-link-mobile" to="/">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link className="nav-link" to="/cart">
+                    Cart
+                    {this.renderCartItemsCount()}
+                  </Link>
+                </li>
+              </ul>
+              <button
+                onClick={this.onClickLogout}
+                type="button"
+                className="logout-btn-mobile"
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+        )}
+      </Popup>
+    </div>
   )
 
   render() {
@@ -106,12 +118,12 @@ class Header extends Component {
             </div>
           </Link>
           <div className="nav-links-container">
-            <li onClick={this.onClickHome}>
+            <li className="nav-list-link">
               <Link className="nav-link" to="/">
                 Home
               </Link>
             </li>
-            <li>
+            <li className="nav-list-link">
               <Link className="nav-link" to="/cart">
                 Cart
                 {this.renderCartItemsCount()}
@@ -124,9 +136,9 @@ class Header extends Component {
             >
               Logout
             </button>
-            {this.Modal()}
           </div>
         </ul>
+        {this.Modal()}
       </nav>
     )
   }

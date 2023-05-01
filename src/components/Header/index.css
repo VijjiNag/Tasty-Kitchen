@@ -5,6 +5,11 @@
   padding-right: 5%;
   padding-top: 10px;
 }
+.nav-container-mobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .burger {
   display: flex;
   flex-direction: column;
@@ -31,8 +36,8 @@
   gap: 10px;
 }
 .web-logo {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
 }
 .nav-head {
   font-family: DM Sans;
@@ -69,6 +74,9 @@
   margin-top: 0px;
   gap: 30px;
 }
+.nav-list-link {
+  margin-top: 6px;
+}
 .nav-link {
   font-family: DM Sans;
   color: #334155;
@@ -87,10 +95,8 @@
   border-radius: 8px;
   font-family: DM Sans;
   font-weight: 500;
-  margin-top: 0px;
   cursor: pointer;
   color: #ffffff;
-  margin-top: 0px;
 }
 
 .hamburger-icon-btn {
@@ -142,6 +148,9 @@
 }
 @media screen and (min-width: 768px) {
   .hamburger-icon-btn {
+    display: none;
+  }
+  .nav-container-mobile {
     display: none;
   }
 }

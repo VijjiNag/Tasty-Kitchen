@@ -28,76 +28,70 @@ const CartItem = props => (
         decrementCartItemQuantity(id)
       }
       return (
-        <div>
-          <li className="food-cart-item">
-            <div className="food">
-              <img className="food-item-image" src={imageUrl} alt="" />
-              <div className="food-details-container">
-                <h1 className="food-name">{name}</h1>
-                <div className="qty-mobile">
-                  <button
-                    testid="decrement-quantity"
-                    onClick={onClickDecrementCarItemQuantity}
-                    type="button"
-                    className="cart-qty-btn"
-                  >
-                    <BsDashSquare />
-                  </button>
-                  <p className="cart-quantity" testid="item-quantity">
-                    {quantity}
-                  </p>
-                  <button
-                    testid="increment-quantity"
-                    onClick={onClickIncrementCartItemQuantity}
-                    type="button"
-                    className="cart-qty-btn"
-                  >
-                    <BsPlusSquare />
-                  </button>
-                </div>
-                <div className="price-mobile">
-                  <BiRupee className="cart-item-total-price-icon" />
-                  <p className="total-price">{totalPrice}</p>
-                </div>
+        <li className="food-cart-item">
+          <div className="food">
+            <img className="food-item-image" src={imageUrl} alt="" />
+            <div className="food-details-container">
+              <h1 className="food-name">{name}</h1>
+              <div className="qty-mobile">
                 <button
-                  onClick={onClickRemoveCartItem}
+                  onClick={onClickDecrementCarItemQuantity}
                   type="button"
-                  className="d-btn-mobile"
+                  className="cart-qty-btn"
                 >
-                  <MdDelete className="delete-icon" />
+                  <BsDashSquare />
+                </button>
+                <p className="cart-quantity">{quantity}</p>
+                <button
+                  onClick={onClickIncrementCartItemQuantity}
+                  type="button"
+                  className="cart-qty-btn"
+                >
+                  <BsPlusSquare />
                 </button>
               </div>
-            </div>
-            <div className="cart-qty-container">
+              <div className="price-mobile">
+                <BiRupee className="cart-item-total-price-icon" />
+                <p className="total-price">{totalPrice}</p>
+              </div>
               <button
-                onClick={onClickDecrementCarItemQuantity}
+                onClick={onClickRemoveCartItem}
                 type="button"
-                className="cart-qty-btn"
+                className="d-btn-mobile"
               >
-                <BsDashSquare />
-              </button>
-              <p className="cart-quantity">{quantity}</p>
-              <button
-                onClick={onClickIncrementCartItemQuantity}
-                type="button"
-                className="cart-qty-btn"
-              >
-                <BsPlusSquare />
+                <MdDelete className="delete-icon" />
               </button>
             </div>
-            <div className="cart-item-price-container">
-              <BiRupee className="cart-item-total-price-icon" />
-              <p className="total-price">{totalPrice}</p>
-            </div>
+          </div>
+          <div className="cart-qty-container">
             <button
-              onClick={onClickRemoveCartItem}
+              onClick={onClickDecrementCarItemQuantity}
               type="button"
-              className="delete-btn"
+              className="cart-qty-btn"
             >
-              <MdDelete className="delete-icon" />
+              <BsDashSquare />
             </button>
-          </li>
-        </div>
+            <p className="cart-quantity">{quantity}</p>
+            <button
+              onClick={onClickIncrementCartItemQuantity}
+              type="button"
+              className="cart-qty-btn"
+            >
+              <BsPlusSquare />
+            </button>
+          </div>
+          <div className="cart-item-price-container">
+            <BiRupee className="cart-item-total-price-icon" />
+            <p className="total-price">{totalPrice}</p>
+          </div>
+          <button
+            onClick={onClickRemoveCartItem}
+            type="button"
+            className="delete-btn"
+          >
+            <MdDelete className="delete-icon" />
+          </button>
+        </li>
       )
     }}
   </CartContext.Consumer>

@@ -9,7 +9,7 @@ const RestaurantsListItem = props => {
   return (
     <li className="res-list">
       <Link to={`/restaurant/${id}`} className="res-link">
-        <img className="res-img" src={imageUrl} alt="" />
+        <img className="res-img" src={imageUrl} alt="restaurant" />
         <div className="res-details">
           <h1 className="hotel-name">{name}</h1>
           <p className="food-type">{cuisine}</p>

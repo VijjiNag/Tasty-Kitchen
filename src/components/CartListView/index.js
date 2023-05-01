@@ -10,16 +10,16 @@ class CartListView extends Component {
     isOrdered: false,
   }
 
-  onClickPlaceOrderItems = () => {
-    this.setState({isOrdered: true})
-  }
-
   render() {
     return (
       <CartContext.Consumer>
         {value => {
           const {cartList} = value
           const {isOrdered} = this.state
+          const onClickPlaceOrderItems = () => {
+            this.setState({isOrdered: true})
+            localStorage.setItem('cart_items', JSON.stringify([]))
+          }
           let total = 0
           cartList.forEach(eachCartItem => {
             total += eachCartItem.cost * eachCartItem.quantity
@@ -31,7 +31,7 @@ class CartListView extends Component {
                 <OrderedPage />
               ) : (
                 <>
-                  <ul className="cart-list" testid="cartItem">
+                  <ul className="cart-list">
                     {cartList.map(eachList => (
                       <CartItem cartItemDetails={eachList} key={eachList.id} />
                     ))}
@@ -42,12 +42,10 @@ class CartListView extends Component {
                     <div className="order-container">
                       <div className="price-container">
                         <BiRupee className="rupee-icon-summary" />
-                        <p className="total-cost" testid="total-price">
-                          {total}
-                        </p>
+                        <p className="total-cost">{total}</p>
                       </div>
                       <button
-                        onClick={this.onClickPlaceOrderItems}
+                        onClick={onClickPlaceOrderItems}
                         type="button"
                         className="placer-order-btn"
                       >

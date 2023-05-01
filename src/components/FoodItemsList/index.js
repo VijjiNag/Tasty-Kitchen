@@ -2,13 +2,12 @@ import {Component} from 'react'
 import {BiRupee} from 'react-icons/bi'
 import {AiFillStar} from 'react-icons/ai'
 import {BsPlusSquare, BsDashSquare} from 'react-icons/bs'
-import swal from 'sweetalert'
 import CartContext from '../../context/CartContext'
 import './index.css'
 
 class FoodItemsList extends Component {
   state = {
-    quantity: 0,
+    quantity: 1,
   }
 
   onClickDecrementQuantity = () => {
@@ -33,11 +32,8 @@ class FoodItemsList extends Component {
         const {foodItemDetails} = this.props
         const {imageUrl, name, cost, rating} = foodItemDetails
         const {addCartItem} = value
-        const isQuantityGreaterThanZero = quantity > 0
         const onClickAddItem = () => {
-          this.setState({quantity: 1})
           addCartItem({...foodItemDetails, quantity})
-          swal('Hurray!', 'You have added to cart successfully!', 'success')
         }
         return (
           <li className="item">
@@ -52,30 +48,23 @@ class FoodItemsList extends Component {
                 <AiFillStar className="star-icon" />
                 <p className="rating-text">{rating}</p>
               </div>
-              {isQuantityGreaterThanZero && (
-                <div className="qty-container">
-                  <button
-                    testid="decrement-count"
-                    onClick={this.onClickDecrementQuantity}
-                    type="button"
-                    className="qty-btn"
-                  >
-                    <BsDashSquare />
-                  </button>
-                  <p className="qty" testid="active-count">
-                    {quantity}
-                  </p>
-                  <button
-                    testid="increment-count"
-                    onClick={this.onClickIncrementQuantity}
-                    type="button"
-                    className="qty-btn"
-                  >
-                    <BsPlusSquare />
-                  </button>
-                </div>
-              )}
-
+              <div className="qty-container">
+                <button
+                  onClick={this.onClickDecrementQuantity}
+                  type="button"
+                  className="qty-btn"
+                >
+                  <BsDashSquare />
+                </button>
+                <p className="qty">{quantity}</p>
+                <button
+                  onClick={this.onClickIncrementQuantity}
+                  type="button"
+                  className="qty-btn"
+                >
+                  <BsPlusSquare />
+                </button>
+              </div>
               <button
                 onClick={onClickAddItem}
                 type="button"

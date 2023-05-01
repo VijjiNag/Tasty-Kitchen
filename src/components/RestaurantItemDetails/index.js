@@ -73,7 +73,7 @@ class RestaurantItemDetails extends Component {
   }
 
   renderLoadingView = () => (
-    <div className="offer-details-loader-container" data-testid="loader">
+    <div className="offer-details-loader-container">
       <Loader type="ThreeDots" color="#F7931E" height="50" width="50" />
     </div>
   )
@@ -135,7 +135,7 @@ class RestaurantItemDetails extends Component {
           </div>
         </div>
         <div className="food-items-container">
-          <ul className="food-items-list-container" testid="foodItem">
+          <ul className="food-items-list-container">
             {foodItems.map(eachItem => (
               <FoodItemsList foodItemDetails={eachItem} key={eachItem.id} />
             ))}
